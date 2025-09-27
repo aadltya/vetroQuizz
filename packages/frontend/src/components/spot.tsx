@@ -22,10 +22,10 @@ export function SpotlightPreview() {
       />
       <div className="relative z-10 mx-auto w-full max-w-7xl p-4 pt-20 md:pt-0">
         <h1 className="bg-opacity-50 bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-center text-4xl font-bold text-transparent md:text-7xl">
-          VetroQuizz <br /> test your knowledge.
+          VertoQuizz <br /> test your knowledge.
         </h1>
         <p className="mx-auto mt-4 max-w-lg text-center text-base font-normal text-neutral-300">
-            Welcome to VetroQuizz, where curiosity meets challenge. Here, you get to explore, think, and compete all while having fun. Our quizzes are designed to make you think twice, learn something new.
+            Welcome to VertoQuizz, where curiosity meets challenge. Here, you get to explore, think, and compete all while having fun. Our quizzes are designed to make you think twice, learn something new.
         </p>
       </div>
     </div>

@@ -143,7 +143,7 @@ export default function QuizApp() {
   if (state === 'start') {
     return (
       <div className="min-h-screen bg-neutral-800 flex items-center justify-center p-5">
-        <div className="bg-white rounded-3xl shadow-2xl p-10 max-w-2xl w-full min-h-96 flex items-center justify-center">
+        <div className="bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.2)] p-10 max-w-2xl w-full min-h-96 flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-5xl font-bold text-gray-800 mb-4">Quiz App</h1>
             <p className="text-xl text-gray-600 mb-2">
@@ -168,7 +168,7 @@ export default function QuizApp() {
   if (state === 'loading') {
     return (
       <div className="min-h-screen bg-neutral-800 flex items-center justify-center p-5">
-        <div className="bg-white rounded-3xl shadow-2xl p-10 max-w-2xl w-full min-h-96 flex items-center justify-center">
+        <div className="bg-white rounded-xl shadow-2xl p-10 max-w-2xl w-full min-h-96 flex items-center justify-center">
           <div className="text-center">
             <h2 className="text-2xl text-gray-600">Loading...</h2>
           </div>
@@ -181,7 +181,7 @@ export default function QuizApp() {
   if (state === 'error') {
     return (
       <div className="min-h-screen bg-neutral-800 to-pink-500 flex items-center justify-center p-5">
-        <div className="bg-white rounded-3xl shadow-2xl p-10 max-w-2xl w-full min-h-96 flex items-center justify-center">
+        <div className="bg-white rounded-xl shadow-2xl p-10 max-w-2xl w-full min-h-96 flex items-center justify-center">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-red-600 mb-4">Error</h2>
             <p className="text-lg text-gray-600 mb-8">{error}</p>
@@ -204,8 +204,8 @@ export default function QuizApp() {
     const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
 
     return (
-      <div className="min-h-screen bg-neutral-800 flex items-center justify-center p-5">
-        <div className="bg-white rounded-3xl shadow-2xl p-10 max-w-2xl w-full">
+      <div className="max-h-screen bg-white flex items-center justify-center p-5">
+        <div className="bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.2)] p-10 max-w-2xl w-full">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-gray-800 mb-4">Quiz Time!</h1>
             {timeLeft !== null && (
@@ -289,7 +289,7 @@ export default function QuizApp() {
 
     return (
       <div className="min-h-screen bg-neutral-800 flex items-center justify-center p-5">
-        <div className="bg-white rounded-3xl shadow-2xl p-10 max-w-4xl w-full">
+        <div className="bg-white rounded-xl shadow-2xl p-10 max-w-4xl w-full">
           <div className="text-center mb-8">
             <h1 className="text-5xl font-bold text-gray-800 mb-4">Quiz Complete!</h1>
             
