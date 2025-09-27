@@ -1,0 +1,30 @@
+{
+  "name": "quiz-app-monorepo",
+  "version": "1.0.0",
+  "description": "Full-stack Online Quiz Application",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:nextjs": "concurrently \"npm run dev:backend\" \"npm run dev:frontend1\"",
+    "dev:backend": "cd packages/backend && npm run dev",
+    "dev:frontend": "cd packages/frontend && npm run dev",
+    "dev:frontend1": "cd packages/frontend1 && npm run dev",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:nextjs": "npm run build:backend && npm run build:frontend1",
+    "build:backend": "cd packages/backend && npm run build",
+    "build:frontend": "cd packages/frontend && npm run build",
+    "build:frontend1": "cd packages/frontend1 && npm run build",
+    "test": "npm run test:backend",
+    "test:backend": "cd packages/backend && npm run test",
+    "db:migrate": "cd packages/backend && npx prisma migrate dev",
+    "db:seed": "cd packages/backend && npx prisma db seed",
+    "db:studio": "cd packages/backend && npx prisma studio",
+    "install:all": "npm install && cd packages/backend && npm install && cd ../frontend && npm install && cd ../frontend1 && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
