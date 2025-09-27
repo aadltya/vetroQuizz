@@ -104,7 +104,10 @@ export default function QuizApp() {
   const handleSubmit = async () => {
     try {
       setState('loading');
-      const response = await axios.post('http://localhost:3001/api/quiz/submit', { answers });
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/quiz/submit`,
+        { answers }
+      );
       setQuizResults(response.data);
       setState('results');
       setTimeLeft(null);
@@ -290,7 +293,7 @@ export default function QuizApp() {
             <h1 className="text-5xl font-bold text-gray-800 mb-4">Quiz Complete</h1>
             
             <div className="text-6xl font-bold text-gray-800 mb-4">
-              {quizResults.score} / {quizResults.total}
+              {quizResults.score}/{quizResults.total}
             </div>
             
             <p className="text-2xl text-gray-600 mb-8">
