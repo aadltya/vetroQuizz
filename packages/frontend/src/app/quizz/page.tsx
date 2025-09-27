@@ -201,27 +201,27 @@ export default function QuizApp() {
   if (state === 'quiz') {
     const currentQuestion = questions[currentQuestionIndex];
     const currentAnswer = getCurrentAnswer();
-    const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+    const progress = ((currentQuestionIndex) / questions.length) * 100;
 
     return (
-      <div className="max-h-screen bg-white flex items-center justify-center p-5">
-        <div className="bg-white rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.2)] p-10 max-w-2xl w-full">
+      <div className="min-h-screen bg-white flex items-center justify-center p-5">
+        <div className="bg-neutral-50 rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.2)] p-10 max-h-4/5 max-w-2xl w-full">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-gray-800 mb-4">Quiz Time!</h1>
             {timeLeft !== null && (
-              <div className={`inline-block px-6 py-3 rounded-full font-semibold text-lg ${
+              <div className={`inline-block px-6 py-3 rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.2)] font-semibold text-lg ${
                 timeLeft < 60 
                   ? 'bg-red-100 text-red-700' 
                   : 'bg-gray-100 text-gray-700'
               }`}>
-                {formatTime(timeLeft)}
+                Time Left: {formatTime(timeLeft)}
               </div>
             )}
           </div>
-
+          
           <div className="w-full bg-gray-200 rounded-full h-2 mb-8">
             <div 
-              className="bg-neutral-700 h-2 rounded-full transition-all duration-300"
+              className="bg-neutral-700 h-2 rounded-full transition-all duration-400"
               style={{ width: `${progress}%` }}
             />
           </div>
@@ -236,10 +236,10 @@ export default function QuizApp() {
               {currentQuestion.options.map((option, index) => (
                 <button
                   key={index}
-                  className={`w-full p-4 text-left rounded-xl border-2 transition-all duration-200 ${
+                  className={`w-full p-4 text-left rounded-xl border-2 transition-all cursor-pointer duration-200 ${
                     currentAnswer === index
-                      ? 'border-indigo-500 bg-indigo-500 text-white'
-                      : 'border-gray-200 bg-white text-gray-700 hover:border-indigo-300 hover:bg-gray-50'
+                      ? 'border-neutral-800 bg-neutral-700 text-white'
+                      : 'border-gray-200 bg-white text-gray-700 hover:border-neutral-400 hover:bg-gray-50'
                   }`}
                   onClick={() => handleAnswerSelect(index)}
                 >
@@ -257,10 +257,6 @@ export default function QuizApp() {
             >
               Previous
             </button>
-
-            <span className="text-gray-600 font-medium">
-              {currentQuestionIndex + 1} / {questions.length}
-            </span>
 
             {currentQuestionIndex === questions.length - 1 ? (
               <button
@@ -291,14 +287,14 @@ export default function QuizApp() {
       <div className="min-h-screen bg-neutral-800 flex items-center justify-center p-5">
         <div className="bg-white rounded-xl shadow-2xl p-10 max-w-4xl w-full">
           <div className="text-center mb-8">
-            <h1 className="text-5xl font-bold text-gray-800 mb-4">Quiz Complete!</h1>
+            <h1 className="text-5xl font-bold text-gray-800 mb-4">Quiz Complete</h1>
             
             <div className="text-6xl font-bold text-gray-800 mb-4">
               {quizResults.score} / {quizResults.total}
             </div>
             
             <p className="text-2xl text-gray-600 mb-8">
-              You scored {percentage}%!
+              You scored {percentage}%
             </p>
           </div>
 
@@ -312,8 +308,8 @@ export default function QuizApp() {
                     key={result.questionId}
                     className={`p-4 rounded-lg flex justify-between items-center ${
                       result.correct 
-                        ? 'bg-green-50 border-l-4 border-green-500' 
-                        : 'bg-red-50 border-l-4 border-red-500'
+                        ? 'bg-green-100' 
+                        : 'bg-red-100'
                     }`}
                   >
                     <div className="flex-1">
