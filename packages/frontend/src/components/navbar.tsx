@@ -50,7 +50,7 @@ export function NavbarDemo() {
                     startQuizz();
                 }}
                 variant="primary"
-                >Start Quizz
+                >Start Quiz
             </NavbarButton>
           </div>
         </NavBody>
@@ -89,7 +89,7 @@ export function NavbarDemo() {
                 variant="primary"
                 className="w-full"
               >
-                Start Quizz
+                Start Quiz
               </NavbarButton>
             </div>
           </MobileNavMenu>

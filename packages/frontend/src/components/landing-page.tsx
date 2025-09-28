@@ -1,4 +1,3 @@
-import { NavbarDemo } from "./navbar";
 import { SpotlightPreview } from "./spot";
 
 export function Landing() {

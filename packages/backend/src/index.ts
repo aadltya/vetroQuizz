@@ -25,7 +25,7 @@ app.get('/api/quiz/questions', async (req, res) => {
         id: true,
         text: true,
         options: true,
-        // Exclude correctOptionIndex from response
+        // we are Exclude correctOptionIndex from response
       },
       orderBy: {
         id: 'asc'
@@ -111,5 +111,5 @@ process.on('SIGTERM', async () => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Backend server running on port ${PORT}`);
+  console.log(`   Backend server running on port: ${PORT}`);
 });
