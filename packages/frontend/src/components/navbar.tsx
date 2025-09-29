@@ -25,10 +25,6 @@ export function NavbarDemo() {
       name: "Code",
       link: "https://github.com/aadltya",
     },
-    {
-      name: "Contact",
-      link: "#contact",
-    },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
