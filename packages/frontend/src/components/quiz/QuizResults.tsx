@@ -47,23 +47,36 @@ export function QuizResults({ results, questions, onRestart }: QuizResultsProps)
           <div className="space-y-4">
             {results.results.map((result, index) => {
               const question = questions.find(q => q.id === result.questionId);
+              const correctText =
+                question && typeof result.correctOptionIndex === 'number'
+                  ? question.options[result.correctOptionIndex]
+                  : undefined;
               return (
                 <div
                   key={result.questionId}
-                  className={`p-4 rounded-lg flex justify-between items-center ${
+                  className={`p-4 rounded-lg ${
                     result.correct 
                       ? 'bg-green-100' 
                       : 'bg-red-100'
                   }`}
                 >
-                  <div className="flex-1">
-                    <strong className="text-gray-800">Question {index + 1}:</strong> 
-                    <span className="text-gray-700 ml-2">{question?.text}</span>
-                  </div>
-                  <div className={`font-semibold text-sm ${
-                    result.correct ? 'text-green-600' : 'text-red-600'
-                  }`}>
-                    {result.correct ? 'Correct' : 'Incorrect'}
+                  <div className="flex justify-between items-start gap-4">
+                    <div className="flex-1">
+                      <div>
+                        <strong className="text-gray-800">Question {index + 1}:</strong> 
+                        <span className="text-gray-700 ml-2">{question?.text}</span>
+                      </div>
+                      {typeof correctText === 'string' && (
+                        <div className="mt-2 text-sm text-gray-700">
+                          <span className="font-bold">Correct answer:</span> {correctText}
+                        </div>
+                      )}
+                    </div>
+                    <div className={`font-semibold text-sm ${
+                      result.correct ? 'text-green-600' : 'text-red-600'
+                    }`}>
+                      {result.correct ? 'Correct' : 'Incorrect'}
+                    </div>
                   </div>
                 </div>
               );
