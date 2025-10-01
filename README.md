@@ -3,50 +3,6 @@
 A full-stack TypeScript monorepo implementing an interactive quiz application with Express.js backend and NextJs frontend.
 
 
-<!-- ## Project Structure -->
-
-```
-packages/
-├── backend/                           # Backend API server
-│   ├── src/
-│   │   ├── index.ts                   # Main server entry point
-│   │   └── seed.ts                    # Database seeding script
-│   ├── prisma/
-│   │   ├── schema.prisma              # Database schema
-│   │   └── migrations/                # Database migrations
-│   ├── _tests_/
-│   │   └── scoring.test.ts            # Test files
-│   ├── package.json
-│   ├── tsconfig.json
-│   ├── vitest.config.ts
-│   └── env.example
-│
-└── frontend/                          # Next.js frontend application
-    ├── src/
-    │   ├── app/                       # Next.js App Router
-    │   │   ├── globals.css            # Global styles
-    │   │   ├── layout.tsx             # Root layout component
-    │   │   ├── page.tsx               # Home page
-    │   │   └── quizz/                 # Quiz application pages
-    │   │       ├── page.tsx           # Main quiz page
-    │   │       └── loading.tsx        # Loading component
-    │   ├── components/                # Reusable UI components
-    │   │   ├── quiz/                  # Quiz-specific components
-    │   │   │   ├── QuizStart.tsx      # Quiz start screen
-    │   │   │   ├── QuizQuestion.tsx   # Individual question component
-    │   │   │   ├── QuizResults.tsx    # Results display component
-    │   │   │   └── QuizError.tsx      # Error handling component
-    │   │   └── ui/                    # UI utility components
-    │   ├── hooks/                     # Custom React hooks
-    │   │   └── useQuiz.ts             # Quiz logic and state management
-    │   └── lib/                       # Utility functions
-    │       └── utils.ts               # Common utilities
-    ├── public/                        # Static assets
-    ├── package.json
-    ├── next.config.ts                 # Next.js configuration
-    └── env.example                    # Environment variables template
-```
-
 ## Quick Start
 
 ### 1. Install Dependencies
@@ -58,7 +14,7 @@ npm run install:all
 
 ### 2. Database Setup - Using Neon (Recommended)
 
-1. Go to [Neon Console](https://console.neon.tech/)
+1. Go to [NeonDB Console](https://console.neon.tech/)
 2. Create a new project
 3. Copy the connection string
 
