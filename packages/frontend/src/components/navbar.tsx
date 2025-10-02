@@ -34,7 +34,7 @@ export function NavbarDemo() {
   }
 
   return (
-    <div className="relative w-full">
+    <div className="max-w-2/3 mx-auto">
       <Navbar>
         {/* Desktop Navigation */}
         <NavBody>
