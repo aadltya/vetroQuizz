@@ -22,18 +22,20 @@ export function SpotlightPreview() {
         className="-top-40 left-0 md:-top-20 md:left-60"
         fill="white"
       />
-      <div>
-      <motion.div className="relative mx-4 my-4 flex flex-col items-center justify-center gap-4 text-center sm:mx-0 sm:mb-0 sm:flex-row">
-        <LayoutTextFlip
-          text="VertoQuizz test your"
-          words={["knowledge.", "mind.", "skills.", "wisdom."]
-          }
-        />
-      </motion.div>
-      <p className="mx-auto mt-4 max-w-lg text-center text-base font-normal text-neutral-300">
-            Welcome to VertoQuizz, where curiosity meets challenge. Here, you get to explore, think, and compete all while having fun. Our quizzes are designed to make you think twice, learn something new.
+      <div className="relative z-10">
+        <motion.div className="relative mx-4 my-4 flex flex-col items-center justify-center gap-4 text-center sm:mx-0 sm:mb-0 sm:flex-row">
+          <LayoutTextFlip
+            text="VertoQuizz test your"
+            words={["knowledge.", "mind.", "skills.", "wisdom."]}
+            className="text-xl md:text-5xl font-semibold"
+          />
+        </motion.div>
+        <p className="mx-auto mt-6 max-w-2xl text-center text-lg md:text-md font-normal text-neutral-300 leading-relaxed">
+          Welcome to VertoQuizz, where curiosity meets challenge. <br />
+          Here, you get to explore, think, and compete all while having fun. <br />
+          Our quizzes are designed to make you think twice.
         </p>
-    </div>
+      </div>
     </div>
   );
 }

@@ -7,10 +7,12 @@ export const LayoutTextFlip = ({
   text = "Build Amazing",
   words = ["Landing Pages", "Component Blocks", "Page Sections", "3D Shaders"],
   duration = 3000,
+  className,
 }: {
   text: string;
   words: string[];
   duration?: number;
+  className?: string;
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -26,7 +28,7 @@ export const LayoutTextFlip = ({
     <>
       <motion.span
         layoutId="subtext"
-        className="text-2xl font-bold tracking-tight drop-shadow-lg md:text-4xl"
+        className={cn("text-2xl font-bold tracking-tight drop-shadow-lg", className)}
       >
         {text}
       </motion.span>
