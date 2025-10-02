@@ -19,11 +19,11 @@ export function NavbarDemo() {
   const navItems = [
     {
       name: "Docs",
-      link: "#Docs",
+      link: "https://chambray-lilac-47a.notion.site/Submission-for-ASE-Challenge-Verto-27e72c389f1980afb3b2d8bbf5af0ed6",
     },
     {
       name: "Code",
-      link: "https://github.com/aadltya",
+      link: "https://github.com/aadltya/vertoQuizz",
     },
   ];
 

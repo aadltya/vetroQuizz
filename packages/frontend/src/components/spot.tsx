@@ -2,6 +2,8 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { Spotlight } from "./ui/Spotlight";
 import { NavbarDemo } from "./navbar";
+import { LayoutTextFlip } from "./layout-text-flip";
+import { motion } from "motion/react";
 
 export function SpotlightPreview() {
   return (
@@ -20,14 +22,18 @@ export function SpotlightPreview() {
         className="-top-40 left-0 md:-top-20 md:left-60"
         fill="white"
       />
-      <div className="relative z-10 mx-auto w-full max-w-7xl p-4 pt-20 md:pt-0">
-        <h1 className="bg-opacity-50 bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-center text-4xl font-bold text-transparent md:text-7xl">
-          VertoQuizz <br /> test your knowledge.
-        </h1>
-        <p className="mx-auto mt-4 max-w-lg text-center text-base font-normal text-neutral-300">
+      <div>
+      <motion.div className="relative mx-4 my-4 flex flex-col items-center justify-center gap-4 text-center sm:mx-0 sm:mb-0 sm:flex-row">
+        <LayoutTextFlip
+          text="VertoQuizz test your"
+          words={["knowledge.", "mind.", "skills.", "wisdom."]
+          }
+        />
+      </motion.div>
+      <p className="mx-auto mt-4 max-w-lg text-center text-base font-normal text-neutral-300">
             Welcome to VertoQuizz, where curiosity meets challenge. Here, you get to explore, think, and compete all while having fun. Our quizzes are designed to make you think twice, learn something new.
         </p>
-      </div>
+    </div>
     </div>
   );
 }
