@@ -29,6 +29,12 @@ DATABASE_URL="postgresql://username:password@host:port/database?sslmode=require"
 # Server port (optional)
 PORT=3001
 ```
+Create a `.env` file in `packages/frontend/`:
+
+```bash
+# Backend URL
+NEXT_PUBLIC_BACKEND_URL=http://localhost:3001
+```
 
 ### 4. Database Migration & Seeding
 
