@@ -43,7 +43,7 @@ export function useQuiz() {
     try {
       setState('loading');
       setError('');
-      const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/quiz/questions`);
+      const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/quiz/questions`);
       setQuestions(response.data);
       setState('quiz');
       setTimeLeft(QUIZ_TIME_LIMIT);
@@ -103,7 +103,7 @@ export function useQuiz() {
     try {
       setState('loading');
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/quiz/submit`,
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/quiz/submit`,
         { answers }
       );
       setQuizResults(response.data);
